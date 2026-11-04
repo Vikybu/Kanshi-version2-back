@@ -39,3 +39,5 @@ namespace Kanshi.Controllers
         }
     }
 }
+
+//Ceci est un commentaire de test pour la CI
