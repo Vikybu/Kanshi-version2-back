@@ -1,0 +1,32 @@
+name: Backend CI Quality
+
+on:
+  pull_request:
+    branches:
+      - preprod
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Backend Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build backend
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Run unit tests
+        run: dotnet test --configuration Release --no-build
