@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kanshi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4f3626fcb41ecfb69fd549fe43969af3d29fef3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a938c0a902c029d320b57decef06c63b65fe2db")]
 [assembly: System.Reflection.AssemblyProductAttribute("Kanshi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kanshi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
