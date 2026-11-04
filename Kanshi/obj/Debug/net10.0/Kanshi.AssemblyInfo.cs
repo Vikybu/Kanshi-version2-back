@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kanshi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca37f71b5627abce29a9b69bb824d2cc9fe6655")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01f1c20fcba11795399e8fefc07772273fc0acb7")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("Kanshi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kanshi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
