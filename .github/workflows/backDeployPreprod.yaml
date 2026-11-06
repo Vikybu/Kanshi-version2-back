@@ -29,8 +29,8 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v6
         with:
-          context: .
-          file: ./Dockerfile
+          context: ./Kanshi
+          file: ./Kanshi/Dockerfile
           push: true
           platforms: linux/arm64
           tags: vikybuu/mon-backend:preprod
