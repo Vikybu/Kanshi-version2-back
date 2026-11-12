@@ -2254,11 +2254,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ferry\\Desktop\\Alternance\\Kanshi\\kanshi-back\\Kanshi\\Kanshi\\Kanshi.csproj",
+      "projectUniqueName": "C:\\Users\\ferry\\Desktop\\Alternance\\Kanshi\\kanshi-back\\Kanshi\\Kanshi.csproj",
       "projectName": "Kanshi",
-      "projectPath": "C:\\Users\\ferry\\Desktop\\Alternance\\Kanshi\\kanshi-back\\Kanshi\\Kanshi\\Kanshi.csproj",
+      "projectPath": "C:\\Users\\ferry\\Desktop\\Alternance\\Kanshi\\kanshi-back\\Kanshi\\Kanshi.csproj",
       "packagesPath": "C:\\Users\\ferry\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ferry\\Desktop\\Alternance\\Kanshi\\kanshi-back\\Kanshi\\Kanshi\\obj\\",
+      "outputPath": "C:\\Users\\ferry\\Desktop\\Alternance\\Kanshi\\kanshi-back\\Kanshi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

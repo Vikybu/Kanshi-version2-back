@@ -22,6 +22,284 @@ namespace Kanshi.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("Kanshi.Models.DowntimeReason", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("ProductionOrderDowntimeReasonId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DowntimeReasons");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.FinalProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("MeasurementUnit")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("QuantityofProduct")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Reference")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("TheoreticalIndustrialPace")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FinalProducts");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.Machine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("FinalProductProducted")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("LongName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Pace")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("RawMaterialUsed")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ShortName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Machines");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.NonQuality", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NonQualities");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.ProductionOrder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("EndTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("FinalProductId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MachineId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ProductionOrderNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("RawMaterialId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RawMaterialQuantity")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RealFinalProductQuantity")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("TheoreticalFinalProductQuantity")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("UsersId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FinalProductId");
+
+                    b.HasIndex("MachineId");
+
+                    b.HasIndex("RawMaterialId");
+
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("ProductionOrders");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.ProductionOrderDowntimeReason", b =>
+                {
+                    b.Property<int>("ProductionOrderId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("DowntimeReasonId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ProductionOrderId", "DowntimeReasonId");
+
+                    b.HasIndex("DowntimeReasonId");
+
+                    b.ToTable("ProductionOrderDowntimeReasons");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.ProductionOrderNonQuality", b =>
+                {
+                    b.Property<int>("ProductionOrderId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("NonQualityId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ProductionOrderId", "NonQualityId");
+
+                    b.HasIndex("NonQualityId");
+
+                    b.ToTable("ProductionOrderNonQualities");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.RawMaterial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("MeasurementUnit")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Reference")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("TheoreticalInductrialPace")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RawMaterials");
+                });
+
             modelBuilder.Entity("Kanshi.Models.Users", b =>
                 {
                     b.Property<int>("Id")
@@ -61,6 +339,116 @@ namespace Kanshi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.ProductionOrder", b =>
+                {
+                    b.HasOne("Kanshi.Models.FinalProduct", "FinalProduct")
+                        .WithMany("ProductionOrders")
+                        .HasForeignKey("FinalProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Kanshi.Models.Machine", "Machine")
+                        .WithMany("ProductionOrders")
+                        .HasForeignKey("MachineId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Kanshi.Models.RawMaterial", "RawMaterial")
+                        .WithMany("ProductionOrders")
+                        .HasForeignKey("RawMaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Kanshi.Models.Users", "Users")
+                        .WithMany("ProductionOrders")
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FinalProduct");
+
+                    b.Navigation("Machine");
+
+                    b.Navigation("RawMaterial");
+
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.ProductionOrderDowntimeReason", b =>
+                {
+                    b.HasOne("Kanshi.Models.DowntimeReason", "DowntimeReason")
+                        .WithMany("ProductionOrders")
+                        .HasForeignKey("DowntimeReasonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Kanshi.Models.ProductionOrder", "ProductionOrder")
+                        .WithMany("DowntimeReasons")
+                        .HasForeignKey("ProductionOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DowntimeReason");
+
+                    b.Navigation("ProductionOrder");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.ProductionOrderNonQuality", b =>
+                {
+                    b.HasOne("Kanshi.Models.NonQuality", "NonQuality")
+                        .WithMany("ProductionOrders")
+                        .HasForeignKey("NonQualityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Kanshi.Models.ProductionOrder", "ProductionOrder")
+                        .WithMany("NonQualities")
+                        .HasForeignKey("ProductionOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("NonQuality");
+
+                    b.Navigation("ProductionOrder");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.DowntimeReason", b =>
+                {
+                    b.Navigation("ProductionOrders");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.FinalProduct", b =>
+                {
+                    b.Navigation("ProductionOrders");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.Machine", b =>
+                {
+                    b.Navigation("ProductionOrders");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.NonQuality", b =>
+                {
+                    b.Navigation("ProductionOrders");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.ProductionOrder", b =>
+                {
+                    b.Navigation("DowntimeReasons");
+
+                    b.Navigation("NonQualities");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.RawMaterial", b =>
+                {
+                    b.Navigation("ProductionOrders");
+                });
+
+            modelBuilder.Entity("Kanshi.Models.Users", b =>
+                {
+                    b.Navigation("ProductionOrders");
                 });
 #pragma warning restore 612, 618
         }
