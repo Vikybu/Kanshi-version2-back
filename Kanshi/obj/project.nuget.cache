@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VTQ4NzEA8kw=",
+  "dgSpecHash": "/zlxwrmQezQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ferry\\Desktop\\Alternance\\Kanshi\\kanshi-back\\Kanshi\\Kanshi\\Kanshi.csproj",
+  "projectFilePath": "C:\\Users\\ferry\\Desktop\\Alternance\\Kanshi\\kanshi-back\\Kanshi\\Kanshi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ferry\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ferry\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.12\\microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",

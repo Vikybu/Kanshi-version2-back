@@ -12,5 +12,8 @@
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
+        public ICollection<ProductionOrder> ProductionOrders { get; set; }
+            = new List<ProductionOrder>();
+
     }
 }
