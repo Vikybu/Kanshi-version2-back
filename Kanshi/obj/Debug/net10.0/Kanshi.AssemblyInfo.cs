@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kanshi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a20d49c8864c5866da9b03c54eae2ec19ffd37e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39f5083ad9ea1e0b7aa0fedff6a847cd971ea724")]
 [assembly: System.Reflection.AssemblyProductAttribute("Kanshi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kanshi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
