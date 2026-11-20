@@ -243,3 +243,11 @@ C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\obj\Debug\net10.0\re
 C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\obj\Debug\net10.0\Kanshi.pdb
 C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\obj\Debug\net10.0\Kanshi.genruntimeconfig.cache
 C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\obj\Debug\net10.0\ref\Kanshi.dll
+C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ferry\Desktop\Alternance\Kanshi\kanshi-back\Kanshi\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
