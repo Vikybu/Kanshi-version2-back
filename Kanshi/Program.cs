@@ -1,5 +1,11 @@
 using Kanshi.Data;
 using Microsoft.EntityFrameworkCore;
+using Kanshi.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Kanshi.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,13 +26,48 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<UsersRepository>();
+builder.Services.AddScoped<AuthService>();
+
+var jwtKey = builder.Configuration["Jwt:Key"]!;
+
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(jwtKey)
+            ),
+
+            RoleClaimType = System.Security.Claims.ClaimTypes.Role
+        };
+    });
+
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+// using (var scope = app.Services.CreateScope())
+// {
+//     var context = scope.ServiceProvider
+//         .GetRequiredService<KanshiDbContext>();
+
+//     await UserSeeder.SeedAsync(context);
+// }
+
 app.UseCors("Svelte");
 
-app.MapControllers();
+app.UseAuthentication();
+app.UseAuthorization();
 
+app.MapControllers();
 var logger = app.Logger;
 
 using (var scope = app.Services.CreateScope())
