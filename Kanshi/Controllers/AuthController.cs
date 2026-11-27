@@ -26,7 +26,7 @@ namespace Kanshi.Controller
             {
                 return Unauthorized(new
                 {
-                    message = "Numéro d'inscription ou mot de passe incorrect."
+                    message = "Numéro de matricule ou mot de passe incorrect."
                 });
             }
 
