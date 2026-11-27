@@ -1,1 +1,4 @@
 .vs/
+appsettings.Development.json
+appsettings.json
+secrets.json
